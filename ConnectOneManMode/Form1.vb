@@ -492,4 +492,115 @@ Public Class Form1
         sndCommand(newCmd, "File remove request sent to device")
     End Sub
 
+
+    Private Sub Button52_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button52.Click
+        Dim newParam As String = ctPrimary.Text
+        Dim newCmd As String = "* energy 0 hreg_ct_primary_value=" + newParam + ";"
+        sndCommand2(newCmd, "CT primary Changed successfully", Button52, newParam)
+    End Sub
+
+    Sub sndCommand1(ByVal cmdToExec As String, ByVal msg As String, ByVal btn As Button)
+        Dim tc As New TcpClient
+        tc.Connect(devIp, prt)
+        Try
+            Dim outStream As Byte() = System.Text.Encoding.ASCII.GetBytes(cmdToExec)
+            tc.GetStream().Write(outStream, 0, outStream.Length)
+            System.Threading.Thread.Sleep(2000)
+            Dim rest As String = "* reset 0;"
+            Dim kStream As Byte() = System.Text.Encoding.ASCII.GetBytes(rest)
+            tc.GetStream().Write(kStream, 0, kStream.Length)
+            System.Threading.Thread.Sleep(25000)
+            execTransfer()
+            AccessControlTxt(chngLog, msg)
+            MessageBox.Show(msg)
+            AccessControlBtn(btn, 1)
+        Catch ex As Exception
+            MessageBox.Show("Cannot access management mode.Please try again")
+        End Try
+    End Sub
+
+    Sub sndCommand2(ByVal cmdToExec As String, ByVal msg As String, ByVal btn As Button, ByVal prm As String)
+        Dim t As Thread
+        Dim parameter(4) As Object
+        parameter(0) = cmdToExec
+        parameter(1) = msg
+        parameter(2) = btn
+        parameter(3) = prm
+        DisableAll()
+        btn.Text = "wait"
+        btn.Enabled = False
+
+        t = New Thread(AddressOf ExecThread)
+        t.IsBackground = True
+        t.Start(parameter)
+
+
+
+    End Sub
+
+    Sub ExecThread(ByVal state As Object)
+        Dim cmdToExec As String = state(0)
+        Dim msg As String = state(1)
+        Dim btn As Button = state(2)
+        Dim prm As String = state(3)
+        Dim tc As New TcpClient
+        tc.Connect(devIp, prt)
+        Try
+            Dim outStream As Byte() = System.Text.Encoding.ASCII.GetBytes(cmdToExec)
+            tc.GetStream().Write(outStream, 0, outStream.Length)
+            System.Threading.Thread.Sleep(2000)
+            Dim rest As String = "* reset 0;"
+            Dim kStream As Byte() = System.Text.Encoding.ASCII.GetBytes(rest)
+            tc.GetStream().Write(kStream, 0, kStream.Length)
+            System.Threading.Thread.Sleep(25000)
+            AccessControlTxt(chngLog, msg)
+            Dim s As String
+            If Equals(Button52, btn) Then
+                s = GetCTData(2)
+                AccessControlTxt(ctPrimary, s)
+            Else
+                s = GetCTData(1)
+                changeRadio(s)
+            End If
+            Dim newPrm As String = s
+            AccessControlTxt(btn, "GO")
+            EnableAll()
+            AccessControlBtn(btn, 1)
+            If newPrm = prm Then
+                MessageBox.Show("CT Configuration successful")
+            Else
+                MessageBox.Show("CT Configuration Failed")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Cannot access management mode.Please try again")
+        End Try
+    End Sub
+    Sub ChangeRadio(ByVal s As String)
+        Dim i As Integer = Int32.Parse(s)
+        If i = 3 Then
+            AccessControlRadio(ctTypeDelta)
+        ElseIf i = 4 Then
+            AccessControlRadio(ctTypeStar)
+        End If
+    End Sub
+
+    Private Sub Button53_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button53.Click
+        If ctTypeDelta.Checked = True Then
+            Dim newCmd As String = "* energy 0 star_delta_value=3;"
+            sndCommand2(newCmd, "Setting CT Mode to delta", Button53, "3")
+        End If
+        If ctTypeStar.Checked = True Then
+            Dim newCmd As String = "* energy 0 star_delta_value=4;"
+            sndCommand2(newCmd, "Setting CT Mode to star", Button53, "4")
+        End If
+    End Sub
+
+    Private Sub Button54_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button54.Click
+        Dim newIp As String = ipAddrTxt.Text
+        sndCommand("* net 0 ip=" + newIp + ";", "Ip changed successfully")
+        sndCommand("* reset 0;", "Restarting...")
+        devIp = newIp
+        Application.Restart()
+    End Sub
+
 End Class
