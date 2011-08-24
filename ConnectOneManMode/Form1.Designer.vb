@@ -246,6 +246,7 @@ Partial Class Form1
         Me.cnctIpAddrTxt = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button55 = New System.Windows.Forms.Button()
         Me.u3grp.SuspendLayout()
         Me.GroupBox14.SuspendLayout()
         Me.GroupBox16.SuspendLayout()
@@ -2688,6 +2689,7 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.Button55)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.prtTxt)
         Me.Panel1.Controls.Add(Me.Label64)
@@ -2699,6 +2701,15 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1069, 70)
         Me.Panel1.TabIndex = 31
+        '
+        'Button55
+        '
+        Me.Button55.Location = New System.Drawing.Point(329, 41)
+        Me.Button55.Name = "Button55"
+        Me.Button55.Size = New System.Drawing.Size(75, 23)
+        Me.Button55.TabIndex = 28
+        Me.Button55.Text = "Button55"
+        Me.Button55.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -2982,5 +2993,6 @@ Partial Class Form1
     Friend WithEvents cnctIpAddrTxt As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Button55 As System.Windows.Forms.Button
 
 End Class
