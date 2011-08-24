@@ -193,4 +193,303 @@ Public Class Form1
         Return retvalue
     End Function
 
+
+
+
+    Private Sub macIdChng_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles macIdChng.Click
+        Dim newMacId As String = macId.Text
+        Dim newCmd As String = "* net 0 mac=" + newMacId + ";"
+        sndCommand(newCmd, "Mac Id Changed Successfully")
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        Dim newac1Name As String = ac1name.Text
+        Dim newCmd As String = "* ai 0 name=" + newac1Name + ";"
+        sndCommand(newCmd, "ac0 name Changed Successfully")
+    End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        Dim newac1Gain As String = ac1gain.Text
+        Dim newCmd As String = "* ai 0 gain=" + newac1Gain + ";"
+        sndCommand(newCmd, "ac0 gain Changed Successfully")
+    End Sub
+
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+        Dim newac1Offset As String = ac1offset.Text
+        Dim newCmd As String = "* ai 0 offset=" + newac1Offset + ";"
+        sndCommand(newCmd, "ac0 Offset Changed Successfully")
+    End Sub
+
+    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
+        Dim newac1Tole As String = ac1tolerance.Text
+        Dim newCmd As String = "* ai 0 tolerance=" + newac1Tole + ";"
+        sndCommand(newCmd, "ac0 tolerance Changed Successfully")
+    End Sub
+
+    Private Sub Button10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button10.Click
+        Dim newac2Name As String = ac2name.Text
+        Dim newCmd As String = "* ai 1 name=" + newac2Name + ";"
+        sndCommand(newCmd, "ac1 name Changed Successfully")
+    End Sub
+
+    Private Sub Button9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button9.Click
+        Dim newac2Gain As String = ac2gain.Text
+        Dim newCmd As String = "* ai 1 gain=" + newac2Gain + ";"
+        sndCommand(newCmd, "ac1 gain Changed Successfully")
+    End Sub
+
+    Private Sub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button8.Click
+        Dim newac2Offset As String = ac2offset.Text
+        Dim newCmd As String = "* ai 1 offset=" + newac2Offset + ";"
+        sndCommand(newCmd, "ac1 Offset Changed Successfully")
+    End Sub
+
+    Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
+        Dim newac2Tole As String = ac2tolerance.Text
+        Dim newCmd As String = "* ai 1 tolerance=" + newac2Tole + ";"
+        sndCommand(newCmd, "ac1 tolerance Changed Successfully")
+    End Sub
+
+    Private Sub Button18_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button18.Click
+        Dim newac3Name As String = ac3name.Text
+        Dim newCmd As String = "* ai 2 name=" + newac3Name + ";"
+        sndCommand(newCmd, "ac2 name Changed Successfully")
+    End Sub
+
+    Private Sub Button17_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button17.Click
+        Dim newac3Gain As String = ac3gain.Text
+        Dim newCmd As String = "* ai 2 gain=" + newac3Gain + ";"
+        sndCommand(newCmd, "ac2 gain Changed Successfully")
+    End Sub
+
+    Private Sub Button16_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button16.Click
+        Dim newac3Offset As String = ac3offset.Text
+        Dim newCmd As String = "* ai 2 offset=" + newac3Offset + ";"
+        sndCommand(newCmd, "ac2 Offset Changed Successfully")
+    End Sub
+
+    Private Sub Button15_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button15.Click
+        Dim newac3Tole As String = ac3tolerance.Text
+        Dim newCmd As String = "* ai 2 tolerance=" + newac3Tole + ";"
+        sndCommand(newCmd, "ac2 tolerance Changed Successfully")
+    End Sub
+
+    Private Sub Button14_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button14.Click
+        Dim newac4Name As String = ac4name.Text
+        Dim newCmd As String = "* ai 3 name=" + newac4Name + ";"
+        sndCommand(newCmd, "ac3 name Changed Successfully")
+    End Sub
+
+    Private Sub Button13_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button13.Click
+        Dim newac4Gain As String = ac4gain.Text
+        Dim newCmd As String = "* ai 3 gain=" + newac4Gain + ";"
+        sndCommand(newCmd, "ac3 gain Changed Successfully")
+    End Sub
+
+    Private Sub Button12_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button12.Click
+        Dim newac4Offset As String = ac4offset.Text
+        Dim newCmd As String = "* ai 3 offset=" + newac4Offset + ";"
+        sndCommand(newCmd, "ac3 Offset Changed Successfully")
+    End Sub
+
+    Private Sub Button11_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button11.Click
+        Dim newac4Tole As String = ac4tolerance.Text
+        Dim newCmd As String = "* ai 3 tolerance=" + newac4Tole + ";"
+        sndCommand(newCmd, "ac3 tolerance Changed Successfully")
+    End Sub
+
+    Private Sub Button34_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button34.Click
+        Dim newdi1name As String = di1name.Text
+        Dim newCmd As String = "* di 0 name=" + newdi1name + ";"
+        sndCommand(newCmd, "di0 name Changed Successfully")
+    End Sub
+
+    Private Sub Button23_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button23.Click
+        Dim newdi2name As String = di2name.Text
+        Dim newCmd As String = "* di 1 name=" + newdi2name + ";"
+        sndCommand(newCmd, "di1 name Changed Successfully")
+    End Sub
+
+    Private Sub Button20_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button20.Click
+        Dim newdo1name As String = do1name.Text
+        Dim newCmd As String = "* do 0 name=" + newdo1name + ";"
+        sndCommand(newCmd, "do0 name Changed Successfully")
+    End Sub
+
+    Private Sub Button19_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button19.Click
+        Dim newdo2name As String = do2name.Text
+        Dim newCmd As String = "* do 1 name=" + newdo2name + ";"
+        sndCommand(newCmd, "do1 name Changed Successfully")
+    End Sub
+
+    Private Sub Button22_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button22.Click
+        Dim newParam As String = u0name.Text
+        Dim newCmd As String = "* uart 0 dev=" + newParam + ";"
+        sndCommand(newCmd, "uart0 dev Changed Successfully")
+    End Sub
+
+    Private Sub Button24_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button24.Click
+        Dim newParam As String = u0baud.Text
+        Dim newCmd As String = "* uart 0 baud=" + newParam + ";"
+        sndCommand(newCmd, "uart0 baud rate Changed Successfully")
+    End Sub
+
+    Private Sub Button25_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button25.Click
+        Dim newParam As String = u0parity.Text
+        Dim newCmd As String = "* uart 0 parity=" + newParam + ";"
+        sndCommand(newCmd, "uart0 parity Changed Successfully")
+    End Sub
+
+    Private Sub Button26_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button26.Click
+        Dim newParam As String = u0data.Text
+        Dim newCmd As String = "* uart 0 data=" + newParam + ";"
+        sndCommand(newCmd, "uart0 data Changed Successfully")
+    End Sub
+
+    Private Sub Button27_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button27.Click
+        Dim newParam As String = u0stop.Text
+        Dim newCmd As String = "* uart 0 stop=" + newParam + ";"
+        sndCommand(newCmd, "uart0 stop Changed Successfully")
+    End Sub
+
+    Private Sub Button32_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button32.Click
+        Dim newParam As String = u1name.Text
+        Dim newCmd As String = "* uart 1 dev=" + newParam + ";"
+        sndCommand(newCmd, "uart1 dev Changed Successfully")
+    End Sub
+
+    Private Sub Button31_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button31.Click
+        Dim newParam As String = u1baud.Text
+        Dim newCmd As String = "* uart 1 baud=" + newParam + ";"
+        sndCommand(newCmd, "uart1 baud rate Changed Successfully")
+    End Sub
+
+    Private Sub Button30_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button30.Click
+        Dim newParam As String = u1parity.Text
+        Dim newCmd As String = "* uart 1 parity=" + newParam + ";"
+        sndCommand(newCmd, "uart1 parity Changed Successfully")
+    End Sub
+
+    Private Sub Button29_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button29.Click
+        Dim newParam As String = u1data.Text
+        Dim newCmd As String = "* uart 1 data=" + newParam + ";"
+        sndCommand(newCmd, "uart1 data Changed Successfully")
+    End Sub
+
+    Private Sub Button28_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button28.Click
+        Dim newParam As String = u1stop.Text
+        Dim newCmd As String = "* uart 1 stop=" + newParam + ";"
+        sndCommand(newCmd, "uart1 stop Changed Successfully")
+    End Sub
+
+    Private Sub Button39_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button39.Click
+        Dim newParam As String = u2name.Text
+        Dim newCmd As String = "* uart 2 dev=" + newParam + ";"
+        sndCommand(newCmd, "uart2 dev Changed Successfully")
+    End Sub
+
+    Private Sub Button38_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button38.Click
+        Dim newParam As String = u2baud.Text
+        Dim newCmd As String = "* uart 2 baud=" + newParam + ";"
+        sndCommand(newCmd, "uart2 baud rate Changed Successfully")
+    End Sub
+
+    Private Sub Button37_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button37.Click
+        Dim newParam As String = u2parity.Text
+        Dim newCmd As String = "* uart 2 parity=" + newParam + ";"
+        sndCommand(newCmd, "uart2 parity Changed Successfully")
+    End Sub
+
+    Private Sub Button36_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button36.Click
+        Dim newParam As String = u2data.Text
+        Dim newCmd As String = "* uart 2 data=" + newParam + ";"
+        sndCommand(newCmd, "uart2 data Changed Successfully")
+    End Sub
+
+    Private Sub Button33_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button33.Click
+        Dim newParam As String = u2stop.Text
+        Dim newCmd As String = "* uart 2 stop=" + newParam + ";"
+        sndCommand(newCmd, "uart2 stop Changed Successfully")
+    End Sub
+
+    Private Sub Button44_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button44.Click
+        Dim newParam As String = u3name.Text
+        Dim newCmd As String = "* uart 3 dev=" + newParam + ";"
+        sndCommand(newCmd, "uart3 dev Changed Successfully")
+    End Sub
+
+    Private Sub Button43_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button43.Click
+        Dim newParam As String = u3baud.Text
+        Dim newCmd As String = "* uart 3 baud=" + newParam + ";"
+        sndCommand(newCmd, "uart3 baud rate Changed Successfully")
+    End Sub
+
+    Private Sub Button42_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button42.Click
+        Dim newParam As String = u3parity.Text
+        Dim newCmd As String = "* uart 3 parity=" + newParam + ";"
+        sndCommand(newCmd, "uart3 parity Changed Successfully")
+    End Sub
+
+    Private Sub Button41_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button41.Click
+        Dim newParam As String = u3data.Text
+        Dim newCmd As String = "* uart 3 data=" + newParam + ";"
+        sndCommand(newCmd, "uart3 data Changed Successfully")
+    End Sub
+
+    Private Sub Button40_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button40.Click
+        Dim newParam As String = u3stop.Text
+        Dim newCmd As String = "* uart 3 stop=" + newParam + ";"
+        sndCommand(newCmd, "uart3 stop Changed Successfully")
+    End Sub
+
+    Private Sub Button47_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button47.Click
+        Dim newParam As String = baudMt.Text
+        Dim newCmd As String = "* umt 0 baud=" + newParam + ";"
+        sndCommand(newCmd, "MT baud rate Changed Successfully")
+    End Sub
+
+    Private Sub Button46_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button46.Click
+        Dim newParam As String = parityMt.Text
+        Dim newCmd As String = "* umt 0 parity" + newParam + ";"
+        sndCommand(newCmd, "MT parity Changed Successfully")
+    End Sub
+
+    Private Sub Button45_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button45.Click
+        Dim newParam As String = dataMt.Text
+        Dim newCmd As String = "* umt 0 data" + newParam + ";"
+        sndCommand(newCmd, "MT data Changed Successfully")
+    End Sub
+
+    Private Sub Button21_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button21.Click
+        Dim newParam As String = stopMt.Text
+        Dim newCmd As String = "* umt 0 stop" + newParam + ";"
+        sndCommand(newCmd, "MT stop Changed Successfully")
+    End Sub
+
+    Private Sub Button51_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button51.Click
+        Dim newCmd As String = "* time 0 " + yrtxt.Text + "/" + mntxt.Text + "/" + dttxt.Text + "T" + hrtxt.Text + ":" + mitxt.Text + ":" + sctxt.Text + ";"
+        sndCommand(newCmd, "Device time stamp Changed Successfully")
+    End Sub
+
+    Private Sub Button48_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button48.Click
+        If RadioButton1.Checked = True Then
+            Dim newCmd As String = "* net 0 ts=1;"
+            sndCommand(newCmd, "Device Timestamp Enabled")
+        End If
+        If RadioButton2.Checked = True Then
+            Dim newCmd As String = "* net 0 ts=0;"
+            sndCommand(newCmd, "Device Timestamp Disabled")
+        End If
+    End Sub
+
+    Private Sub Button50_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button50.Click
+        Dim newCmd As String = "* sdread 0 " + TextBox16.Text + "-" + TextBox15.Text + "-" + TextBox14.Text + ".txt;"
+        sndCommand(newCmd, "File retrieve request sent to device")
+    End Sub
+
+    Private Sub Button49_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button49.Click
+        Dim newCmd As String = "* sdremf 0 " + TextBox13.Text + "-" + TextBox12.Text + "-" + TextBox11.Text + ".txt;"
+        sndCommand(newCmd, "File remove request sent to device")
+    End Sub
+
 End Class
