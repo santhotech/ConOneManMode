@@ -32,4 +32,11 @@
         Next
     End Sub
 
+    Sub PopulateTextBox(ByVal strmArr() As String, ByVal txtBox As TextBox)
+        Dim len As Integer = strmArr.Length
+        For i = 0 To len - 1
+            tsa.AccessControlTxt(txtBox, strmArr(i))
+        Next
+    End Sub
+
 End Class
