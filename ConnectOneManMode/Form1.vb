@@ -5,6 +5,8 @@ Public Class Form1
     Dim devIp As String
     Dim prt As Integer
     Dim met As New Methods
+    Dim tsa As New ThreadSafeUiAccessors
+
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Dim butText As String = Button1.Text
         devIp = cnctIpAddrTxt.Text
@@ -68,7 +70,7 @@ Public Class Form1
         TextBox3.Text = String.Empty
         'Dim strm As String
         Dim strmArr() As String = GetDumpData()
-        PopulateTextBox(strmArr)
+        met.PopulateTextBox(strmArr, TextBox3)
         TextBox4.Text = strmArr(1)
         macId.Text = strmArr(2)
         'changeLogEnter("Settings fetched Successfully")
@@ -170,7 +172,7 @@ Public Class Form1
     Function GetCTData(ByVal i As Integer)
         Dim retvalue As String = String.Empty
         Dim strmArr() As String = GetDumpData()
-        PopulateTextBox(strmArr)
+        met.PopulateTextBox(strmArr, TextBox3)
         Dim k As Integer = Array.IndexOf(strmArr, "energy-modbus")
         Dim str() As String = strmArr(k + 1).Split(";")
         Dim str1() As String = str(2).Split(",")
