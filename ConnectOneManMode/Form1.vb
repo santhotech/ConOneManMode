@@ -511,9 +511,9 @@ Public Class Form1
             tc.GetStream().Write(kStream, 0, kStream.Length)
             System.Threading.Thread.Sleep(25000)
             execTransfer()
-            AccessControlTxt(chngLog, msg)
+            tsa.AccessControlTxt(chngLog, msg)
             MessageBox.Show(msg)
-            AccessControlBtn(btn, 1)
+            tsa.AccessControlBtn(btn, 1)
         Catch ex As Exception
             MessageBox.Show("Cannot access management mode.Please try again")
         End Try
@@ -526,7 +526,7 @@ Public Class Form1
         parameter(1) = msg
         parameter(2) = btn
         parameter(3) = prm
-        DisableAll()
+        met.DisableAll(Me)
         btn.Text = "wait"
         btn.Enabled = False
 
@@ -553,19 +553,19 @@ Public Class Form1
             Dim kStream As Byte() = System.Text.Encoding.ASCII.GetBytes(rest)
             tc.GetStream().Write(kStream, 0, kStream.Length)
             System.Threading.Thread.Sleep(25000)
-            AccessControlTxt(chngLog, msg)
+            tsa.AccessControlTxt(chngLog, msg)
             Dim s As String
             If Equals(Button52, btn) Then
                 s = GetCTData(2)
-                AccessControlTxt(ctPrimary, s)
+                tsa.AccessControlTxt(ctPrimary, s)
             Else
                 s = GetCTData(1)
                 changeRadio(s)
             End If
             Dim newPrm As String = s
-            AccessControlTxt(btn, "GO")
-            EnableAll()
-            AccessControlBtn(btn, 1)
+            tsa.AccessControlTxt(btn, "GO")
+            met.EnableAll(Me)
+            tsa.AccessControlBtn(btn, 1)
             If newPrm = prm Then
                 MessageBox.Show("CT Configuration successful")
             Else
@@ -578,9 +578,9 @@ Public Class Form1
     Sub ChangeRadio(ByVal s As String)
         Dim i As Integer = Int32.Parse(s)
         If i = 3 Then
-            AccessControlRadio(ctTypeDelta)
+            tsa.AccessControlRadio(ctTypeDelta)
         ElseIf i = 4 Then
-            AccessControlRadio(ctTypeStar)
+            tsa.AccessControlRadio(ctTypeStar)
         End If
     End Sub
 
