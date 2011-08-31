@@ -602,7 +602,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button54_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button54.Click, Button55.Click
+    Private Sub Button54_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button54.Click
         Dim newIp As String = ipAddrTxt.Text
         sndCommand("* net 0 ip=" + newIp + ";", "Ip changed successfully")
         sndCommand("* reset 0;", "Restarting...")
@@ -610,4 +610,9 @@ Public Class Form1
         Application.Restart()
     End Sub
 
+    Private Sub Button55_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button55.Click
+        Dim newParam As String = subNetTxt.Text
+        Dim newCmd As String = "* net 0 subnet=" + newParam + ";"
+        sndCommand(newCmd, "Subnet Changed Successfully")
+    End Sub
 End Class
