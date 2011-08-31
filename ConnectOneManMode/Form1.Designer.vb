@@ -246,6 +246,9 @@ Partial Class Form1
         Me.cnctIpAddrTxt = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.subNetTxt = New System.Windows.Forms.TextBox()
+        Me.Button55 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.u3grp.SuspendLayout()
         Me.GroupBox14.SuspendLayout()
         Me.GroupBox16.SuspendLayout()
@@ -2164,9 +2167,12 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label67)
+        Me.GroupBox1.Controls.Add(Me.Button55)
         Me.GroupBox1.Controls.Add(Me.Button54)
         Me.GroupBox1.Controls.Add(Me.macIdChng)
+        Me.GroupBox1.Controls.Add(Me.subNetTxt)
         Me.GroupBox1.Controls.Add(Me.ipAddrTxt)
         Me.GroupBox1.Controls.Add(Me.macId)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -2700,6 +2706,35 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(1069, 70)
         Me.Panel1.TabIndex = 31
         '
+        'subNetTxt
+        '
+        Me.subNetTxt.Location = New System.Drawing.Point(78, 105)
+        Me.subNetTxt.Name = "subNetTxt"
+        Me.subNetTxt.Size = New System.Drawing.Size(146, 22)
+        Me.subNetTxt.TabIndex = 3
+        '
+        'Button55
+        '
+        Me.Button55.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button55.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Button55.Location = New System.Drawing.Point(230, 104)
+        Me.Button55.Name = "Button55"
+        Me.Button55.Size = New System.Drawing.Size(34, 23)
+        Me.Button55.TabIndex = 4
+        Me.Button55.Text = "GO"
+        Me.Button55.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label1.Location = New System.Drawing.Point(7, 109)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(65, 15)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Subnet Mask"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2982,5 +3017,8 @@ Partial Class Form1
     Friend WithEvents cnctIpAddrTxt As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Button55 As System.Windows.Forms.Button
+    Friend WithEvents subNetTxt As System.Windows.Forms.TextBox
 
 End Class

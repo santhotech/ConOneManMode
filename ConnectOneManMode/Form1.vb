@@ -143,6 +143,13 @@ Public Class Form1
             dataBoxes(i).Text = strmArr(a + 7)
             stopBoxes(i).Text = strmArr(a + 9)
         Next
+
+        Dim subNetIndex As Integer = Array.IndexOf(strmArr, "netmask")
+        subNetTxt.Text = strmArr(subNetIndex + 1)
+
+
+
+
         Dim b As Integer = Array.IndexOf(strmArr, "mt-br")
         baudMt.Text = strmArr(b + 1)
         parityMt.Text = strmArr(b + 3)
@@ -595,7 +602,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button54_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button54.Click
+    Private Sub Button54_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button54.Click, Button55.Click
         Dim newIp As String = ipAddrTxt.Text
         sndCommand("* net 0 ip=" + newIp + ";", "Ip changed successfully")
         sndCommand("* reset 0;", "Restarting...")
