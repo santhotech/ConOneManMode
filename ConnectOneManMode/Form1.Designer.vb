@@ -249,6 +249,7 @@ Partial Class Form1
         Me.cnctIpAddrTxt = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.proclbl = New System.Windows.Forms.Label()
         Me.u3grp.SuspendLayout()
         Me.GroupBox14.SuspendLayout()
         Me.GroupBox16.SuspendLayout()
@@ -2723,6 +2724,7 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.proclbl)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.prtTxt)
         Me.Panel1.Controls.Add(Me.Label64)
@@ -2734,6 +2736,14 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1069, 70)
         Me.Panel1.TabIndex = 31
+        '
+        'proclbl
+        '
+        Me.proclbl.AutoSize = True
+        Me.proclbl.Location = New System.Drawing.Point(300, 48)
+        Me.proclbl.Name = "proclbl"
+        Me.proclbl.Size = New System.Drawing.Size(0, 13)
+        Me.proclbl.TabIndex = 28
         '
         'Form1
         '
@@ -3020,5 +3030,6 @@ Partial Class Form1
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button55 As System.Windows.Forms.Button
     Friend WithEvents subNetTxt As System.Windows.Forms.TextBox
+    Friend WithEvents proclbl As System.Windows.Forms.Label
 
 End Class
